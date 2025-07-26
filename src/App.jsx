@@ -155,13 +155,20 @@ function App() {
   }
 
   console.log(valorPersistente.current)
- 
-  
+  const main = useRef()
+
+  function mod(mode) {
+    if (mode == 'dark') {
+      main.current.classList.add('dark')
+    } else if (mode == 'light'){
+      main.current.classList.remove('dark')
+    }
+  }
 
   return (
     <div>
-      <main className='bg-[#ECF3FD] min-h-screen w-screen p-[20px] flex flex-col gap-[60px_0px] '>
-        <Logo />
+      <main ref={main} className='bg-[#ECF3FD] min-h-screen w-screen flex flex-col gap-[60px_0px] dark:bg-linear-180 from-[#040918] from-0% to-100% to-[#091540] overflow-x-hidden p-11'>
+        <Logo modoD={mod} />
         <Buttons data={jsons} funcao={type} />
         <Cx dt={jsons} func={type} />
       </main>

@@ -3,7 +3,7 @@ import Cxdata from "./cxdata"
 function Cx({ dt, func }) {
     return (
         <div>
-            <ul className="flex flex-col gap-[20px_0px]">
+            <ul className="flex flex-col gap-[15px_15px] min-[1000px]:grid grid-cols-3">
                 {dt.map(indice => {
                     return (
                         <li key={indice.name}>
