@@ -1,19 +1,19 @@
+import Cxdata from "./cxdata"
+
 function Cx({ dt, func }) {
     return (
         <div>
-            <ul>
+            <ul className="flex flex-col gap-[20px_0px]">
                 {dt.map(indice => {
                     return (
                         <li key={indice.name}>
-                            <h3>{indice.name}</h3>
-                            <p>{indice.description}</p>
-                            <button onClick={() => func("remove", indice.name)}>remove</button>
-                            <button onClick={() => func("validation", indice.name, indice.type)} style={{background: indice.isActive ? '#00ff00' : 'red'}}>active?</button>
+                            <Cxdata indice={indice} func={func}/>
                         </li>
                     )
                    
                 })}
             </ul>
+        
         </div>
     )
 }

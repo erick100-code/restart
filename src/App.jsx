@@ -2,92 +2,91 @@ import { useEffect, useRef, useState } from 'react'
 import './App.css'
 import Buttons from './components/buttons'
 import Cx from './components/caixas'
+import Logo from './components/logo'
 
 function App() {
   let valorPersistente = useRef()
-  
-  // duas opções: 1- fazer a filtragem do state para variaveis normais. 2- fazer a filtragem no useRef e mudar no state
  
   let [jsons, setJsons] = useState([
     {
-      "logo": "./assets/images/logo-devlens.svg",
+      "logo": "/images/logo-devlens.svg",
       "name": "DevLens",
       "description": "Quickly inspect page layouts and visualize element boundaries.",
       "isActive": true,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-style-spy.svg",
+      "logo": "/images/logo-style-spy.svg",
       "name": "StyleSpy",
       "description": "Instantly analyze and copy CSS from any webpage element.",
       "isActive": true,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-speed-boost.svg",
+      "logo": "/images/logo-speed-boost.svg",
       "name": "SpeedBoost",
       "description": "Optimizes browser resource usage to accelerate page loading.",
       "isActive": true,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-json-wizard.svg",
+      "logo": "/images/logo-json-wizard.svg",
       "name": "JSONWizard",
       "description": "Formats, validates, and prettifies JSON responses in-browser.",
       "isActive": false,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-tab-master-pro.svg",
+      "logo": "/images/logo-tab-master-pro.svg",
       "name": "TabMaster Pro",
       "description": "Organizes browser tabs into groups and sessions.",
       "isActive": false,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-viewport-buddy.svg",
+      "logo": "/images/logo-viewport-buddy.svg",
       "name": "ViewportBuddy",
       "description": "Simulates various screen resolutions directly within the browser.",
       "isActive": false,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-markup-notes.svg",
+      "logo": "/images/logo-markup-notes.svg",
       "name": "Markup Notes",
       "description": "Enables annotation and notes directly onto webpages for collaborative debugging.",
       "isActive": false,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-grid-guides.svg",
+      "logo": "/images/logo-grid-guides.svg",
       "name": "GridGuides",
       "description": "Overlay customizable grids and alignment guides on any webpage.",
       "isActive": false,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-palette-picker.svg",
+      "logo": "/images/logo-palette-picker.svg",
       "name": "Palette Picker",
       "description": "Instantly extracts color palettes from any webpage.",
       "isActive": false,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-link-checker.svg",
+      "logo": "/images/logo-link-checker.svg",
       "name": "LinkChecker",
       "description": "Scans and highlights broken links on any page.",
       "isActive": false,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-dom-snapshot.svg",
+      "logo": "/images/logo-dom-snapshot.svg",
       "name": "DOM Snapshot",
       "description": "Capture and export DOM structures quickly.",
       "isActive": false,
       "type":"all"
     },
     {
-      "logo": "./assets/images/logo-console-plus.svg",
+      "logo": "/images/logo-console-plus.svg",
       "name": "ConsolePlus",
       "description": "Enhanced developer console with advanced filtering and logging.",
       "isActive": false,
@@ -97,7 +96,7 @@ function App() {
 
   useEffect(() => {
     valorPersistente.current = jsons 
-    console.log(valorPersistente)
+    console.log(valorPersistente.current)
   },[])
 
   function type(valid, indice, typ) {
@@ -155,13 +154,17 @@ function App() {
     }
   }
 
-  console.log(jsons)
+  console.log(valorPersistente.current)
  
+  
 
   return (
     <div>
-      <Buttons data={jsons} funcao={type} />
-      <Cx dt={jsons} func={type} />      
+      <main className='bg-[#ECF3FD] min-h-screen w-screen p-[20px] flex flex-col gap-[60px_0px] '>
+        <Logo />
+        <Buttons data={jsons} funcao={type} />
+        <Cx dt={jsons} func={type} />
+      </main>
     </div>  
   )
 }
