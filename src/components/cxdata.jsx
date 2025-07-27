@@ -12,7 +12,7 @@ function Cxdata({ indice, func }) {
             </div>
 
             <div className="flex justify-between">
-                <button onClick={() => func("remove", indice.name)} className="border-[.1px]  border-[#00000057] rounded-3xl text-[18px] p-[5px_15px] cursor-pointer dark:border-gray-500 dark:text-white focus:outline-2 focus:outline-red-600 focus:border-0 focus:bg-gray-100 dark:focus:bg-gray-700 dark:focus:border-2 dark:focus:border-[#091540] dark:">remove</button>
+                <button onClick={() => func("remove", indice.name)} className="border-[.1px]  border-[#00000057] rounded-3xl text-[18px] p-[5px_15px] cursor-pointer dark:border-gray-500 dark:text-white focus:outline-2 focus:outline-red-600 focus:border-0 focus:bg-gray-100 dark:focus:bg-gray-700 dark:focus:border-2 dark:focus:border-[#091540]">remove</button>
                
                 <button
                     onClick={() => func("validation", indice.name, indice.type)} 
