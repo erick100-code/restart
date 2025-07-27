@@ -13,7 +13,7 @@ body {
     width: 100vw;
     overflow-x: hidden;
 
-    font-family: 'main', Courier New, Courier, monospace;
+    font-family: 'main', Arial, Helvetica, sans-serif;
 }
 
 .activeB {
